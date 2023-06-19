@@ -30,9 +30,8 @@ jobs:
       run: |
         # Build and test the project, then
         # deploy to Azure Web App.
-        echo "//npm.pkg.github.com/:_authToken=${{secrets.GIT_TOKEN}}" > ~/.npmrc
         npm install
-        npm run build:prod --if-present
+        npm run build
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v2
     - name: Set up Docker Buildx
